@@ -1,1 +1,1 @@
-# Gerenciamento de Recusos da á Aplicação e dos Ambientes
+# Gerenciamento de Recusos da á Aplicação e dos Ambientes.
