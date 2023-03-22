@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: api-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: api
@@ -18,6 +18,13 @@ spec:
         ports:
         - containerPort: 80
         imagePullPolicy: Always
+        resources:
+         requests:
+           memory: 32Mi
+           cpu: 150m
+         limits:
+           memory: 664Mi
+           cpu: 500m
         readinessProbe:
           httpGet:
             path: /read
