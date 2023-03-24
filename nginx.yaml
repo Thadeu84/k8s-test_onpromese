@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nginx
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
@@ -12,28 +12,23 @@ spec:
       labels:
         app: nginx
     spec:
+      initContainers:
+        - name: init 
+          image: kubedevio/ubuntu-curl:v1
+          command: ["curl", "-X", "POST", "http://pruu.herokuapp.com/dump/initcontainer"]
       containers:
         - name: nginx
           image: nginx
           lifecycle:
             postStart:
               exec:
-                command:
-                  - "curl"
-                  - "-X"
-                  - "POST"
-                  - "http://pruu.herokuapp.com/dump/lifecyclestart"
+                command: ["curl", "-X", "POST", "http://pruu.herokuapp.com/dump/lifecyclestart"]
             preStop:
               exec:
-                command:
-                  - "curl"
-                  - "-X"
-                  - "POST"
-                  - "http://pruu.herokuapp.com/dump/lifecyclestop"
+                command: ["curl", "-X", "POST", "http://pruu.herokuapp.com/dump/lifecyclestop"]
           resources:
             limits:
               memory: "32Mi"
               cpu: "500m"
           ports:
             - containerPort: 80
-    
