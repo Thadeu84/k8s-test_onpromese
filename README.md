@@ -10,3 +10,11 @@
 # lidando com volumes no Kubernetes
  - `Criando um volume Hostpath`
  - `Utilizando volume do seu provedor de nuvem`
+
+# Outros modos de deploy
+
+- `Statefulset`
+- `DaemonSet`
+- `Job e CronJob`
+- `Jobs`
+- `Cronjob`
