@@ -16,6 +16,12 @@
  - `deployment.yaml`
  - `services.yaml`
 
+# Namespace
+
+- `Utilizando Namespace`
+- `Comunicação entre Namespaces`
+- `O que é separador por namespaces e o que não é ?`
+
 # Gerenciamento de Recusos da Aplicação e dos Ambientes.
 
 - `HPA`
